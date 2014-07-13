@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <title>Angular - Custom Directive Sample</title>
+
+    <!-- See: -->
+    <!-- Build custom directives with AngularJS -->
+    <!-- http://www.ng-newsletter.com/posts/directives.html -->
+    
+    <!-- A Custom Directive is constructed without the dash in it's name, but it's called with the dash in the name. -->
+    <style>
+        * { font-family: Arial; }
+        .sparkline { background-color: Yellow; }
+    </style>
+</head>
+<body>
+    <h1>Angular - Custom Directive Sample</h1>
+    {{ 1 + 2 }}
+    <hr />
+    <span ng-sparkline></span>
+    <hr />
+    
+<script src="Scripts/angular.js"></script>
+<script>
+var app = angular.module("app", []);
+
+app.directive('ngSparkline', function() {
+  return {
+    restrict: 'A',
+    template: '<div class="sparkline">&nbsp;Sparkline&nbsp;</div>'
+  }
+});
+</script>
+
+</body>
+</html>
